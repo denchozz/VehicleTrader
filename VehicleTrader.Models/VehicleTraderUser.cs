@@ -5,8 +5,7 @@
     public class VehicleTraderUser : IdentityUser
     {
         public VehicleTraderUser()
-        {
-            
+        {       
         }
     }
 }

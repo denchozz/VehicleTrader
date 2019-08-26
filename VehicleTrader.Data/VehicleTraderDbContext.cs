@@ -1,5 +1,6 @@
 ﻿namespace VehicleTrader.Data
 {
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
@@ -9,14 +10,12 @@
     {
 
 
-        public VehicleTraderDbContext(DbContextOptions<VehicleTraderDbContext> options)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public VehicleTraderDbContext(DbContextOptions<VehicleTraderDbContext> options, IHttpContextAccessor httpContextAccessor)
             : base(options)
         {
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
+            _httpContextAccessor = httpContextAccessor;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -25,6 +24,14 @@
                 b => b.MigrationsAssembly("VehicleTrader.App"));
 
             base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<VehicleTraderUser>()
+                .HasKey(user => user.Id);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
