@@ -28,3 +28,15 @@ D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\V
 D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\VehicleTrader.App.dll
 D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\VehicleTrader.App.pdb
 D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\VehicleTrader.App.csproj.CopyComplete
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\bin\Debug\netcoreapp2.2\VehicleTrader.Data.dll
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\bin\Debug\netcoreapp2.2\VehicleTrader.Models.dll
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\bin\Debug\netcoreapp2.2\VehicleTrader.Data.pdb
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\bin\Debug\netcoreapp2.2\VehicleTrader.Models.pdb
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Login.g.cshtml.cs
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Logout.g.cshtml.cs
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Register.g.cshtml.cs
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\_ViewImports.g.cshtml.cs
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs

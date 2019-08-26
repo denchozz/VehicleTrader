@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using VehicleTrader.App.Models;
-
-namespace VehicleTrader.App.Controllers
+﻿namespace VehicleTrader.App.Controllers
 {
+    using System.Diagnostics;
+    using Microsoft.AspNetCore.Mvc;
+    using VehicleTrader.App.Models;
+
     public class HomeController : Controller
     {
         public IActionResult Index()
