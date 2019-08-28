@@ -129,6 +129,90 @@ namespace VehicleTrader.App.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("VehicleTrader.Models.FuelType", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FuelTypes");
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.Manufacturer", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("Founded");
+
+                    b.Property<string>("Headquarters");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("NumberOfEmployees");
+
+                    b.Property<string>("Website");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Manufacturers");
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.Model", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ManufacturerId");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ManufacturerId");
+
+                    b.ToTable("Models");
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.Offer", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Offers");
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.TechData", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Category");
+
+                    b.Property<string>("EngineType");
+
+                    b.Property<string>("OfferId");
+
+                    b.Property<int>("Power");
+
+                    b.Property<DateTime>("RegistrationDate");
+
+                    b.Property<string>("Transmission");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OfferId");
+
+                    b.ToTable("TechDatas");
+                });
+
             modelBuilder.Entity("VehicleTrader.Models.VehicleTraderUser", b =>
                 {
                     b.Property<string>("Id")
@@ -223,6 +307,20 @@ namespace VehicleTrader.App.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.Model", b =>
+                {
+                    b.HasOne("VehicleTrader.Models.Manufacturer", "Manufacturer")
+                        .WithMany("Models")
+                        .HasForeignKey("ManufacturerId");
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.TechData", b =>
+                {
+                    b.HasOne("VehicleTrader.Models.Offer", "Offer")
+                        .WithMany("TechnicalData")
+                        .HasForeignKey("OfferId");
                 });
 #pragma warning restore 612, 618
         }
