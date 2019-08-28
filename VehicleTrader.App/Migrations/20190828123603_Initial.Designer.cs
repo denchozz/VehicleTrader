@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleTrader.Data;
 
 namespace VehicleTrader.App.Migrations
 {
     [DbContext(typeof(VehicleTraderDbContext))]
-    partial class VehicleTraderDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190828123603_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,42 +131,6 @@ namespace VehicleTrader.App.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("VehicleTrader.Models.Manufacturer", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("Founded");
-
-                    b.Property<string>("Headquarters");
-
-                    b.Property<string>("Name");
-
-                    b.Property<int>("NumberOfEmployyes");
-
-                    b.Property<string>("Website");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Manufacturer");
-                });
-
-            modelBuilder.Entity("VehicleTrader.Models.Model", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ManufacturerId");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ManufacturerId");
-
-                    b.ToTable("Model");
-                });
-
             modelBuilder.Entity("VehicleTrader.Models.VehicleTraderUser", b =>
                 {
                     b.Property<string>("Id")
@@ -259,13 +225,6 @@ namespace VehicleTrader.App.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("VehicleTrader.Models.Model", b =>
-                {
-                    b.HasOne("VehicleTrader.Models.Manufacturer", "Manufacturer")
-                        .WithMany("Models")
-                        .HasForeignKey("ManufacturerId");
                 });
 #pragma warning restore 612, 618
         }

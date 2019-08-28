@@ -31,6 +31,11 @@
             modelBuilder.Entity<VehicleTraderUser>()
                 .HasKey(user => user.Id);
 
+            modelBuilder.Entity<Manufacturer>()
+                .HasMany(m => m.Models)
+                .WithOne(m => m.Manufacturer)
+                .HasForeignKey(m => m.ManufacturerId);
+
             base.OnModelCreating(modelBuilder);
         }
     }

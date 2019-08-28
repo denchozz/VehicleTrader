@@ -10,8 +10,8 @@ using VehicleTrader.Data;
 namespace VehicleTrader.App.Migrations
 {
     [DbContext(typeof(VehicleTraderDbContext))]
-    [Migration("20190826124807_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20190828124242_MakeAndModel")]
+    partial class MakeAndModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -131,6 +131,42 @@ namespace VehicleTrader.App.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("VehicleTrader.Models.Manufacturer", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("Founded");
+
+                    b.Property<string>("Headquarters");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("NumberOfEmployyes");
+
+                    b.Property<string>("Website");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Manufacturer");
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.Model", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ManufacturerId");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ManufacturerId");
+
+                    b.ToTable("Model");
+                });
+
             modelBuilder.Entity("VehicleTrader.Models.VehicleTraderUser", b =>
                 {
                     b.Property<string>("Id")
@@ -225,6 +261,13 @@ namespace VehicleTrader.App.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.Model", b =>
+                {
+                    b.HasOne("VehicleTrader.Models.Manufacturer", "Manufacturer")
+                        .WithMany("Models")
+                        .HasForeignKey("ManufacturerId");
                 });
 #pragma warning restore 612, 618
         }
