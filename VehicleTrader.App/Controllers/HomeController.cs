@@ -8,12 +8,12 @@
     {
         public IActionResult Index()
         {
-            return this.View();
+            return View();
         }
 
         public IActionResult Privacy()
         {
-            return this.View();
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

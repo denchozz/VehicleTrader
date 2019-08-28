@@ -66,7 +66,7 @@
             {
                 using (var context = serviceScope.ServiceProvider.GetRequiredService<VehicleTraderDbContext>())
                 {
-                    context.Database.Migrate();
+                    context.Database.EnsureCreated();
 
                     if (!context.Roles.Any())
                     {
