@@ -1,8 +1,90 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
 }
 
-@if (!this.User.Identity.IsAuthenticated)
+<img src="~/img/homepage-img.jpg" style="min-width:1000px" width="1600" height="900">
+  <div class="w3-display-left w3-padding w3-col 16 m4" style="margin-left:175px">
+    <div class="w3-container" style="background-color:#b2cce6">
+      <h2><img src="~/img/navbar-img.png" /><i class="w3-margin-right"></i>Find Your Vehicle</h2>
+    </div>
+    <div class="w3-container w3-white w3-padding-16">
+        <form action="/action_page.php" target="_blank">
+            <div class="w3-row-padding" style="margin:0 -16px;">
+                <div class="w3-half w3-margin-bottom">
+                    <label>Make</label>
+                    <select class="w3-input w3-border" name="Make">
+                        <option>Any</option>
+                        <optgroup label="All makes">
+                            <option value="bmw">BMW</option>
+                            <option value="mercedes-benz">Mercedes-Benz</option>
+                            <option value="volkswagen">Volkswagen</option>
+                            <option value="audi">Audi</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="w3-half">
+                    <label>Model</label>
+                    <select class="w3-input w3-border" name="Model">
+                        <option>Any</option>
+                        <optgroup label="All models">
+                            <option value="m5">M5</option>
+                            <option value="c63-amg">C63 AMG</option>
+                            <option value="golf-r">Golf R</option>
+                            <option value="s4">S4</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="w3-row-padding" style="margin:8px -16px;">
+                <div class="w3-half w3-margin-bottom">
+                    <label>Year of Registration <i class="fa fa-calendar-o"></i></label>
+                    <select class="w3-input w3-border" name="Year">
+                        <option>Any</option>
+                        <option value="2005">From 2005</option>
+                        <option value="2006">From 2006</option>
+                        <option value="2007">From 2007</option>
+                        <option value="2008">From 2008</option>
+                    </select>
+                </div>
+                <div class="w3-half">
+                    <label>Max Price</label>
+                    <select class="w3-input w3-border" name="Year">
+                        <option>Any</option>
+                        <option value="20000">$20000</option>
+                        <option value="30000">$30000</option>
+                        <option value="40000">$40000</option>
+                        <option value="50000">$50000</option>
+                    </select>
+                </div>
+            </div>
+            <div class="w3-row-padding" style="margin:8px -16px;">
+                <div class="w3-half w3-margin-bottom">
+                    <label>Engine</label>
+                    <select class="w3-input w3-border" name="Engine">
+                        <option>Any</option>
+                        <option value="petrol">Petrol</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="electric">Electric</option>
+                        <option value="hybrid">Hybrid</option>
+                    </select>
+                </div>
+                <div class="w3-half">
+                    <label>Gearbox</label>
+                    <select class="w3-input w3-border" name="Gearbox">
+                        <option>Any</option>
+                        <option value="manual">Manual</option>
+                        <option value="automatic">Automatic</option>
+                        <option value="semi-automatic">Semi-automatic</option>
+                    </select>
+                </div>
+            </div>
+            <button class="w3-button" style="background-color:#b2cce6" type="submit"><i class="fa fa-search w3-margin-right"></i>Find offers</button>
+            <button class="w3-button" style="background-color:#b2cce6; margin-left:279px" type="submit">Detailed search</button>
+        </form>
+    </div>
+  </div>
+
+@*@if (!this.User.Identity.IsAuthenticated)
 {
     <div class="text-center">
         <h1 class="display-4">Welcome to Vehicle Trader</h1>
@@ -22,6 +104,6 @@ else if (this.User.IsInRole("User"))
         <h1 class="display-4">Welcome, @User.Identity.Name!</h1>
         <p>The number one vehicle marketplace in the world!</p>
     </div>
-}
+}*@
 
 

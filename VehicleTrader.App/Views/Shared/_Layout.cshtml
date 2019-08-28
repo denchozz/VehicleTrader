@@ -1,135 +1,95 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - VehicleTrader.App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - VehicleTrader</title>
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
-              crossorigin="anonymous"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
-    </environment>
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", Arial, Helvetica, sans-serif
+        }
+    </style>
 </head>
-<body>
+
+<body class="w3-light-grey">
     <header>
+        <!-- Navigation Bar -->
         @if (!this.User.Identity.IsAuthenticated)
         {
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">VehicleTrader.App</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-white active" href="/Identity/Account/Login">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-white active" href="/Identity/Account/Register">Register</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <div class="w3-bar w3-white w3-large">
+                <a href="/Home/Index" class="w3-bar-item w3-button w3-mobile" style="background-color:#b2cce6"><img src="~/img/navbar-img.png" class="w3-margin-right">Vehicle Trader</a>
+                <a href="#rooms" class="w3-bar-item w3-button w3-mobile">New & Used Cars</a>
+                <a href="#about" class="w3-bar-item w3-button w3-mobile">Dealers</a>
+                <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
+                <a href="/Identity/Account/Register" class="w3-bar-item w3-button w3-right w3-mobile" style="background-color:#b2cce6">Register</a>
+                <a href="/Identity/Account/Login" class="w3-bar-item w3-button w3-right w3-mobile" style="background-color:#b2cce6">Login</a>
+            </div>
         }
         else if (this.User.IsInRole("Admin"))
         {
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">VehicleTrader.App</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-white active" href="/Identity/Account/Logout">Logout</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <div class="w3-bar w3-white w3-large">
+                <a href="/Home/Index" class="w3-bar-item w3-button w3-mobile" style="background-color:#b2cce6"><img src="~/img/navbar-img.png" class="w3-margin-right">Vehicle Trader</a>
+                <a href="#rooms" class="w3-bar-item w3-button w3-mobile">New & Used Cars</a>
+                <a href="#rooms" class="w3-bar-item w3-button w3-mobile">Sell your car</a>
+                <a href="#about" class="w3-bar-item w3-button w3-mobile">Dealers</a>
+                <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
+                <a href="/Identity/Account/Logout" class="w3-bar-item w3-button w3-right w3-mobile" style="background-color:#b2cce6">Logout</a>
+            </div>
         }
         else if (this.User.IsInRole("User"))
         {
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">VehicleTrader.App</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-white active" href="/Identity/Account/Logout">Logout</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <div class="w3-bar w3-white w3-large">
+                <a href="/Home/Index" class="w3-bar-item w3-button w3-mobile" style="background-color:#b2cce6"><img src="~/img/navbar-img.png" class="w3-margin-right">Vehicle Trader</a>
+                <a href="#rooms" class="w3-bar-item w3-button w3-mobile">New & Used Cars</a>
+                <a href="#rooms" class="w3-bar-item w3-button w3-mobile">Sell your car</a>
+                <a href="#about" class="w3-bar-item w3-button w3-mobile">Dealers</a>
+                <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
+                <a href="/Identity/Account/Logout" class="w3-bar-item w3-button w3-right w3-mobile" style="background-color:#b2cce6">Logout</a>
+            </div>
         }
     </header>
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
+
+    <div class="w3-content" style="max-width:1600px;">
+        @*<partial name="_CookieConsentPartial" />*@
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - VehicleTrader.App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer class="w3-padding-16 w3-center" style="background-color:#b2cce6; margin-top:0px">
+        <h2>VEHICLE TRADER</h2>
+        <img src="~/img/navbar-img.png" />
     </footer>
 
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2019 - VehicleTrader.App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
+
     <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
-        </script>
-    </environment>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+            </script>
+        </environment>
+        <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
 </body>
