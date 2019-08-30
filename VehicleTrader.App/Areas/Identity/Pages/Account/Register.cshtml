@@ -4,36 +4,107 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Username"></label>
-                <input asp-for="Input.Username" class="form-control" />
-                <span asp-validation-for="Input.Username" class="text-danger"></span>
+<img src="~/img/homepage-img.jpg" style="min-width:1000px" width="1600" height="900">
+<div class="w3-display-left w3-padding w3-col 16 m4" style="margin-left:175px">
+    <div class="w3-container" style="background-color:#b2cce6">
+        <h2><img src="~/img/navbar-img.png" /><i class="w3-margin-right"></i>Register</h2>
+    </div>
+    <div class="w3-container w3-white w3-padding-16">
+        <form id="account" method="post">
+            <div class="w3-row-padding" style="margin:0 -16px;">
+                <div class="w3-half w3-margin-bottom">
+                    <label>Username</label>
+                    <input asp-for="Input.Username" class="w3-input w3-border" />
+                    <span asp-validation-for="Input.Username" class="text-danger"></span>
+                </div>
+                <div class="w3-half">
+                    <label>Email</label>
+                    <input asp-for="Input.Email" class="w3-input w3-border" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            <div class="w3-row-padding" style="margin:8px -16px;">
+                <div class="w3-half w3-margin-bottom">
+                    <label>Password</label>
+                    <input asp-for="Input.Password" class="w3-input w3-border" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="w3-half">
+                    <label>Confirm Password</label>
+                    <input asp-for="Input.ConfirmPassword" class="w3-input w3-border" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button class="w3-button" style="background-color:#b2cce6" type="submit">Register</button>
         </form>
     </div>
 </div>
+
+@*<div class="w3-container" id="register" style="padding:200px">
+        <h2>Register</h2>
+        <form id="account" method="post">
+            <div class="form-group" style="padding-right:700px">
+                <p>
+                    <input asp-for="Input.Username" class="form-control; w3-input w3-padding-16 w3-border" placeholder="Username" />
+                    <span asp-validation-for="Input.Username" class="text-danger"></span>
+                </p>
+            </div>
+            <div class="form-group" style="padding-right:700px">
+                <p>
+                    <input asp-for="Input.Email" class="form-control; w3-input w3-padding-16 w3-border" placeholder="Email" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </p>
+            </div>
+            <div class="form-group" style="padding-right:700px">
+                <p>
+                    <input asp-for="Input.Password" class="form-control; w3-input w3-padding-16 w3-border" placeholder="Password" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </p>
+            </div>
+            <div class="form-group" style="padding-right:700px">
+                <p>
+                    <input asp-for="Input.ConfirmPassword" class="form-control; w3-input w3-padding-16 w3-border" placeholder="Confirm Password" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </p>
+            </div>
+            <div class="form-group">
+                <p>
+                    <button type="submit" class="w3-button w3-black w3-padding-large">Register</button>
+                </p>
+            </div>
+        </form>
+    </div>*@
+
+@*<div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <h4>Create a new account.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Username"></label>
+                    <input asp-for="Input.Username" class="form-control" />
+                    <span asp-validation-for="Input.Username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <input asp-for="Input.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>*@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
