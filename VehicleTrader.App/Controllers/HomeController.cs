@@ -19,7 +19,6 @@
         {
             this.ViewData["Manufacturers"] = this.context.Manufacturers.ToList();
             this.ViewData["Models"] = this.context.Models.ToList();
-            this.ViewData["RegistrationYears"] = this.context.RegistrationYears.ToList();
             this.ViewData["Gearboxes"] = this.context.Gearboxes.ToList();
             this.ViewData["Engines"] = this.context.Engines.ToList();
             this.ViewData["MaxPrices"] = this.context.MaxPrices.ToList();

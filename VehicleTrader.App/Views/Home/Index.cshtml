@@ -10,7 +10,7 @@
       <h2><img src="~/img/navbar-img.png" /><i class="w3-margin-right"></i>Find Your Vehicle</h2>
     </div>
     <div class="w3-container w3-white w3-padding-16">
-        <form action="/action_page.php" target="_blank">
+        <form action="/action_page.php" target="_blank" id="home">
             <div class="w3-row-padding" style="margin:0 -16px;">
                 <div class="w3-half w3-margin-bottom">
                     <label>Make</label>
@@ -35,14 +35,9 @@
             </div>
             <div class="w3-row-padding" style="margin:8px -16px;">
                 <div class="w3-half w3-margin-bottom">
-                    <label>Year of Registration <i class="fa fa-calendar-o"></i></label>
-                    <select class="w3-input w3-border" name="Year">
-                        <option>Any</option>
-                        @foreach (var regYear in (List<RegistrationYear>)ViewData["RegistrationYears"])
-                        {
-                            <option value="@regYear.Year">From @regYear.Year</option>
-                        }
-                    </select>
+                    <label>Year<i class="fa fa-calendar-o"></i></label>
+                    <br />
+                    <input type="text" class="w3-input w3-border" name="year" form="home">
                 </div>
                 <div class="w3-half">
                     <label>Max Price</label>

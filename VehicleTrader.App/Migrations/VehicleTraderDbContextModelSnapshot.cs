@@ -219,27 +219,28 @@ namespace VehicleTrader.App.Migrations
 
                     b.Property<string>("Make");
 
-                    b.Property<decimal>("MaxPrice");
-
                     b.Property<string>("Model");
 
-                    b.Property<int>("YearOfRegistration");
+                    b.Property<decimal>("Price");
+
+                    b.Property<string>("YearOfRegistration");
 
                     b.HasKey("Id");
 
                     b.ToTable("Offers");
                 });
 
-            modelBuilder.Entity("VehicleTrader.Models.RegistrationYear", b =>
+            modelBuilder.Entity("VehicleTrader.Models.RegYear", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Year");
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegistrationYears");
+                    b.ToTable("RegYears");
                 });
 
             modelBuilder.Entity("VehicleTrader.Models.VehicleTraderUser", b =>

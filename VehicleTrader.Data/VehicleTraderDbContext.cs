@@ -20,8 +20,6 @@
 
         public DbSet<MaxPrice> MaxPrices { get; set; }
 
-        public DbSet<RegistrationYear> RegistrationYears { get; set; }
-
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public VehicleTraderDbContext(DbContextOptions<VehicleTraderDbContext> options, IHttpContextAccessor httpContextAccessor)

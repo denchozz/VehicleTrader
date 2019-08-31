@@ -4745,6 +4745,19 @@
         "runtime": {
           "bin/placeholder/VehicleTrader.Models.dll": {}
         }
+      },
+      "VehicleTrader.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "VehicleTrader.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/VehicleTrader.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VehicleTrader.Services.dll": {}
+        }
       }
     }
   },
@@ -12961,6 +12974,11 @@
       "type": "project",
       "path": "../VehicleTrader.Models/VehicleTrader.Models.csproj",
       "msbuildProject": "../VehicleTrader.Models/VehicleTrader.Models.csproj"
+    },
+    "VehicleTrader.Services/1.0.0": {
+      "type": "project",
+      "path": "../VehicleTrader.Services/VehicleTrader.Services.csproj",
+      "msbuildProject": "../VehicleTrader.Services/VehicleTrader.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12970,7 +12988,8 @@
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
       "VehicleTrader.Data >= 1.0.0",
-      "VehicleTrader.Models >= 1.0.0"
+      "VehicleTrader.Models >= 1.0.0",
+      "VehicleTrader.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -13008,6 +13027,9 @@
             },
             "D:\\C# Web Project Exam\\VehicleTrader\\VehicleTrader.Models\\VehicleTrader.Models.csproj": {
               "projectPath": "D:\\C# Web Project Exam\\VehicleTrader\\VehicleTrader.Models\\VehicleTrader.Models.csproj"
+            },
+            "D:\\C# Web Project Exam\\VehicleTrader\\VehicleTrader.Services\\VehicleTrader.Services.csproj": {
+              "projectPath": "D:\\C# Web Project Exam\\VehicleTrader\\VehicleTrader.Services\\VehicleTrader.Services.csproj"
             }
           }
         }

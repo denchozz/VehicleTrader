@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\VehicleTrader.Data\VehicleTrader.Data.csproj" />
     <ProjectReference Include="..\VehicleTrader.Models\VehicleTrader.Models.csproj" />
+    <ProjectReference Include="..\VehicleTrader.Services\VehicleTrader.Services.csproj" />
   </ItemGroup>
 
 </Project>

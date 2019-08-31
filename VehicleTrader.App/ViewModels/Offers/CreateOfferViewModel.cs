@@ -7,9 +7,9 @@
 
         public string Model { get; set; }
 
-        public int YearOfRegistration { get; set; }
+        public string Year { get; set; }
 
-        public decimal MaxPrice { get; set; }
+        public decimal Price { get; set; }
 
         public string Engine { get; set; }
 

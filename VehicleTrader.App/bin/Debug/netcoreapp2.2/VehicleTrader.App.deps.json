@@ -29,7 +29,8 @@
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
           "VehicleTrader.Data": "1.0.0",
-          "VehicleTrader.Models": "1.0.0"
+          "VehicleTrader.Models": "1.0.0",
+          "VehicleTrader.Services": "1.0.0"
         },
         "runtime": {
           "VehicleTrader.App.dll": {}
@@ -560,6 +561,17 @@
         },
         "compile": {
           "VehicleTrader.Models.dll": {}
+        }
+      },
+      "VehicleTrader.Services/1.0.0": {
+        "dependencies": {
+          "VehicleTrader.Models": "1.0.0"
+        },
+        "runtime": {
+          "VehicleTrader.Services.dll": {}
+        },
+        "compile": {
+          "VehicleTrader.Services.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3878,6 +3890,11 @@
       "sha512": ""
     },
     "VehicleTrader.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VehicleTrader.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

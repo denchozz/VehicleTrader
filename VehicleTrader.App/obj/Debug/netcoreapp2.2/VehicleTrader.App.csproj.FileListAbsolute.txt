@@ -41,3 +41,6 @@ D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\R
 D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
 D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
 D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Views\Offers\Create.g.cshtml.cs
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\obj\Debug\netcoreapp2.2\Razor\Views\Offers\OffersList.g.cshtml.cs
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\bin\Debug\netcoreapp2.2\VehicleTrader.Services.dll
+D:\C# Web Project Exam\VehicleTrader\VehicleTrader.App\bin\Debug\netcoreapp2.2\VehicleTrader.Services.pdb

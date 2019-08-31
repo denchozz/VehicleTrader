@@ -11,6 +11,8 @@
     using System.Linq;
     using VehicleTrader.Data;
     using VehicleTrader.Models;
+    using VehicleTrader.Services;
+    using VehicleTrader.Services.Contracts;
 
     public class Startup
     {
@@ -54,7 +56,8 @@
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            //TODO: ADD SERVICES
+            //Register services!!!
+            services.AddTransient<IOffersService, OffersService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
