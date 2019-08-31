@@ -10,8 +10,8 @@ using VehicleTrader.Data;
 namespace VehicleTrader.App.Migrations
 {
     [DbContext(typeof(VehicleTraderDbContext))]
-    [Migration("20190828124242_MakeAndModel")]
-    partial class MakeAndModel
+    [Migration("20190831211143_Engine_Gearbox_MaxPrice")]
+    partial class Engine_Gearbox_MaxPrice
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -131,12 +131,38 @@ namespace VehicleTrader.App.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("VehicleTrader.Models.Engine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EngineType");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Engines");
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.Gearbox", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("GearboxType");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Gearboxes");
+                });
+
             modelBuilder.Entity("VehicleTrader.Models.Manufacturer", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Founded");
+                    b.Property<int>("Founded");
 
                     b.Property<string>("Headquarters");
 
@@ -148,7 +174,20 @@ namespace VehicleTrader.App.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Manufacturer");
+                    b.ToTable("Manufacturers");
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.MaxPrice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Price");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MaxPrices");
                 });
 
             modelBuilder.Entity("VehicleTrader.Models.Model", b =>
@@ -164,7 +203,45 @@ namespace VehicleTrader.App.Migrations
 
                     b.HasIndex("ManufacturerId");
 
-                    b.ToTable("Model");
+                    b.ToTable("Models");
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.Offer", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Engine");
+
+                    b.Property<string>("Gearbox");
+
+                    b.Property<string>("ImgUrl");
+
+                    b.Property<string>("Make");
+
+                    b.Property<decimal>("MaxPrice");
+
+                    b.Property<string>("Model");
+
+                    b.Property<int>("YearOfRegistration");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Offers");
+                });
+
+            modelBuilder.Entity("VehicleTrader.Models.RegistrationYear", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Year");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RegistrationYears");
                 });
 
             modelBuilder.Entity("VehicleTrader.Models.VehicleTraderUser", b =>

@@ -1,4 +1,6 @@
-﻿@{
+﻿@using VehicleTrader.Models;
+
+@{
     ViewData["Title"] = "Index";
 }
 
@@ -13,25 +15,21 @@
                 <div class="w3-half w3-margin-bottom">
                     <label>Make</label>
                     <select class="w3-input w3-border" name="Make">
-                        <option>Any</option>
-                        <optgroup label="All makes">
-                            <option value="bmw">BMW</option>
-                            <option value="mercedes-benz">Mercedes-Benz</option>
-                            <option value="volkswagen">Volkswagen</option>
-                            <option value="audi">Audi</option>
-                        </optgroup>
+                        <option value="Any">Any</option>
+                        @foreach (var make in (List<Manufacturer>)ViewData["Manufacturers"])
+                        {
+                            <option value="@make.Name">@make.Name</option>
+                        }
                     </select>
                 </div>
                 <div class="w3-half">
                     <label>Model</label>
                     <select class="w3-input w3-border" name="Model">
-                        <option>Any</option>
-                        <optgroup label="All models">
-                            <option value="m5">M5</option>
-                            <option value="c63-amg">C63 AMG</option>
-                            <option value="golf-r">Golf R</option>
-                            <option value="s4">S4</option>
-                        </optgroup>
+                        <option value="Any">Any</option>
+                        @foreach (var carmodel in (List<Model>)ViewData["Models"])
+                        {
+                            <option value="@carmodel.Name">@carmodel.Name</option>
+                        }
                     </select>
                 </div>
             </div>
@@ -40,20 +38,20 @@
                     <label>Year of Registration <i class="fa fa-calendar-o"></i></label>
                     <select class="w3-input w3-border" name="Year">
                         <option>Any</option>
-                        <option value="2005">From 2005</option>
-                        <option value="2006">From 2006</option>
-                        <option value="2007">From 2007</option>
-                        <option value="2008">From 2008</option>
+                        @foreach (var regYear in (List<RegistrationYear>)ViewData["RegistrationYears"])
+                        {
+                            <option value="@regYear.Year">From @regYear.Year</option>
+                        }
                     </select>
                 </div>
                 <div class="w3-half">
                     <label>Max Price</label>
                     <select class="w3-input w3-border" name="Year">
                         <option>Any</option>
-                        <option value="20000">$20000</option>
-                        <option value="30000">$30000</option>
-                        <option value="40000">$40000</option>
-                        <option value="50000">$50000</option>
+                        @foreach (var maxPrice in (List<MaxPrice>)ViewData["MaxPrices"])
+                        {
+                            <option value="@maxPrice.Price">$@maxPrice.Price</option>
+                        }
                     </select>
                 </div>
             </div>
@@ -62,19 +60,20 @@
                     <label>Engine</label>
                     <select class="w3-input w3-border" name="Engine">
                         <option>Any</option>
-                        <option value="petrol">Petrol</option>
-                        <option value="diesel">Diesel</option>
-                        <option value="electric">Electric</option>
-                        <option value="hybrid">Hybrid</option>
+                        @foreach (var engine in (List<Engine>)ViewData["Engines"])
+                        {
+                            <option value="@engine.EngineType">@engine.EngineType</option>
+                        }
                     </select>
                 </div>
                 <div class="w3-half">
                     <label>Gearbox</label>
                     <select class="w3-input w3-border" name="Gearbox">
                         <option>Any</option>
-                        <option value="manual">Manual</option>
-                        <option value="automatic">Automatic</option>
-                        <option value="semi-automatic">Semi-automatic</option>
+                        @foreach (var gearbox in (List<Gearbox>)ViewData["Gearboxes"])
+                        {
+                            <option value="@gearbox.GearboxType">@gearbox.GearboxType</option>
+                        }
                     </select>
                 </div>
             </div>

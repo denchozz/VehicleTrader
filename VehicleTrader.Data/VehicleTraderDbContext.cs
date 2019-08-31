@@ -8,7 +8,19 @@
 
     public class VehicleTraderDbContext : IdentityDbContext<VehicleTraderUser, IdentityRole, string>
     {
+        public DbSet<Offer> Offers { get; set; }
 
+        public DbSet<Manufacturer> Manufacturers { get; set; }
+
+        public DbSet<Model> Models { get; set; }
+
+        public DbSet<Engine> Engines { get; set; }
+
+        public DbSet<Gearbox> Gearboxes { get; set; }
+
+        public DbSet<MaxPrice> MaxPrices { get; set; }
+
+        public DbSet<RegistrationYear> RegistrationYears { get; set; }
 
         private readonly IHttpContextAccessor _httpContextAccessor;
 

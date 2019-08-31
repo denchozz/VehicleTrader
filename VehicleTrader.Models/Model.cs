@@ -1,7 +1,10 @@
 ﻿namespace VehicleTrader.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Model
     {
+        [Key]
         public string Id { get; set; }
 
         public string Name { get; set; }

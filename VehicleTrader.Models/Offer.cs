@@ -1,8 +1,11 @@
-﻿namespace VehicleTrader.App.ViewModels.Offers
+﻿namespace VehicleTrader.Models
 {
+    using System.ComponentModel.DataAnnotations;
 
-    public class CreateOfferViewModel
+    public class Offer
     {
+        [Key]
+        public string Id { get; set; }
         public string Make { get; set; }
 
         public string Model { get; set; }

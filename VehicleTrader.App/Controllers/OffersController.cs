@@ -1,21 +1,19 @@
 ﻿namespace VehicleTrader.App.Controllers
 {
-    using System.Diagnostics;
-    using System.Linq;
     using Microsoft.AspNetCore.Mvc;
-    using VehicleTrader.App.Models;
+    using System.Linq;
     using VehicleTrader.Data;
 
-    public class HomeController : Controller
+    public class OffersController : Controller
     {
         private readonly VehicleTraderDbContext context;
 
-        public HomeController(VehicleTraderDbContext context)
+        public OffersController(VehicleTraderDbContext context)
         {
             this.context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Create()
         {
             this.ViewData["Manufacturers"] = this.context.Manufacturers.ToList();
             this.ViewData["Models"] = this.context.Models.ToList();
@@ -25,17 +23,6 @@
             this.ViewData["MaxPrices"] = this.context.MaxPrices.ToList();
 
             return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

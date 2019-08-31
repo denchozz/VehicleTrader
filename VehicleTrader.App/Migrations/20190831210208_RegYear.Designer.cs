@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleTrader.Data;
 
 namespace VehicleTrader.App.Migrations
 {
     [DbContext(typeof(VehicleTraderDbContext))]
-    partial class VehicleTraderDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190831210208_RegYear")]
+    partial class RegYear
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,32 +131,6 @@ namespace VehicleTrader.App.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("VehicleTrader.Models.Engine", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("EngineType");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Engines");
-                });
-
-            modelBuilder.Entity("VehicleTrader.Models.Gearbox", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("GearboxType");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Gearboxes");
-                });
-
             modelBuilder.Entity("VehicleTrader.Models.Manufacturer", b =>
                 {
                     b.Property<string>("Id")
@@ -173,19 +149,6 @@ namespace VehicleTrader.App.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Manufacturers");
-                });
-
-            modelBuilder.Entity("VehicleTrader.Models.MaxPrice", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<decimal>("Price");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("MaxPrices");
                 });
 
             modelBuilder.Entity("VehicleTrader.Models.Model", b =>
