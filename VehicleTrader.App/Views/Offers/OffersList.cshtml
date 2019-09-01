@@ -7,7 +7,7 @@
 
 <div class="w3-content" style="max-width:1532px;">
 
-    <div class="w3-container w3-margin-top" id="rooms">
+    <div class="w3-container w3-margin-top" id="offers">
         <h3>All of our offers</h3>
     </div>
 
@@ -15,11 +15,11 @@
         @for (int i = 0; i < Model.Count; i++)
         {
             <div class="w3-third w3-margin-bottom">
-                <img src="@Model[i].ImgUrl" alt="Norway" style="width:100%">
+                <img src="@Model[i].ImgUrl" style="width:100%">
                 <div class="w3-container w3-white">
                     <h3>@Model[i].Make @Model[i].Model</h3>
                     <h6 class="w3-opacity">$@Model[i].Price</h6>
-                    <p>@Model[i].Year</p>
+                    <p><i class="fa fa-calendar-o"></i> @Model[i].Year</p>
                     <p>@Model[i].Engine</p>
                     <p>@Model[i].Gearbox</p>
                     <p>@Model[i].Description</p>

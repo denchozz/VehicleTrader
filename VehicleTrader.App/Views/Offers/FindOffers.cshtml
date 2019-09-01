@@ -1,0 +1,32 @@
+﻿@model List<VehicleTrader.App.ViewModels.Offers.OfferViewModel>
+
+@{
+    ViewData["Title"] = "FindOffers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="w3-content" style="max-width:1532px;">
+
+    <div class="w3-container w3-margin-top" id="offers">
+        <h3>Search results:</h3>
+    </div>
+
+    <div class="w3-row-padding w3-padding-16">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="w3-third w3-margin-bottom">
+                <img src="@Model[i].ImgUrl" style="width:100%">
+                <div class="w3-container w3-white">
+                    <h3>@Model[i].Make @Model[i].Model</h3>
+                    <h6 class="w3-opacity">$@Model[i].Price</h6>
+                    <p><i class="fa fa-calendar-o"></i> @Model[i].Year</p>
+                    <p>@Model[i].Engine</p>
+                    <p>@Model[i].Gearbox</p>
+                    <p>@Model[i].Description</p>
+                    <button class="w3-button w3-block w3-black w3-margin-bottom">Call the seller</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

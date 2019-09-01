@@ -20,6 +20,8 @@
 
         public DbSet<MaxPrice> MaxPrices { get; set; }
 
+        public DbSet<Dealer> Dealers { get; set; }
+
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public VehicleTraderDbContext(DbContextOptions<VehicleTraderDbContext> options, IHttpContextAccessor httpContextAccessor)

@@ -25,7 +25,7 @@
             <div class="w3-bar w3-white w3-large">
                 <a href="/Home/Index" class="w3-bar-item w3-button w3-mobile" style="background-color:#b2cce6"><img src="~/img/navbar-img.png" class="w3-margin-right">Vehicle Trader</a>
                 <a href="/Offers/OffersList" class="w3-bar-item w3-button w3-mobile">New & Used Cars</a>
-                <a href="#about" class="w3-bar-item w3-button w3-mobile">Dealers</a>
+                <a href="/Dealers/DealersList" class="w3-bar-item w3-button w3-mobile">Dealers</a>
                 <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
                 <a href="/Identity/Account/Register" class="w3-bar-item w3-button w3-right w3-mobile" style="background-color:#b2cce6">Register</a>
                 <a href="/Identity/Account/Login" class="w3-bar-item w3-button w3-right w3-mobile" style="background-color:#b2cce6">Login</a>
@@ -33,14 +33,15 @@
         }
         else if (this.User.IsInRole("Admin"))
         {
-            <div class="w3-bar w3-white w3-large">
-                <a href="/Home/Index" class="w3-bar-item w3-button w3-mobile" style="background-color:#b2cce6"><img src="~/img/navbar-img.png" class="w3-margin-right">Vehicle Trader</a>
-                <a href="/Offers/OffersList" class="w3-bar-item w3-button w3-mobile">New & Used Cars</a>
-                <a href="/Offers/Create" class="w3-bar-item w3-button w3-mobile">Sell your car</a>
-                <a href="#about" class="w3-bar-item w3-button w3-mobile">Dealers</a>
-                <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
-                <a href="/Identity/Account/Logout" class="w3-bar-item w3-button w3-right w3-mobile" style="background-color:#b2cce6">Logout</a>
-            </div>
+    <div class="w3-bar w3-white w3-large">
+        <a href="/Home/Index" class="w3-bar-item w3-button w3-mobile" style="background-color:#b2cce6"><img src="~/img/navbar-img.png" class="w3-margin-right">Vehicle Trader</a>
+        <a href="/Offers/OffersList" class="w3-bar-item w3-button w3-mobile">New & Used Cars</a>
+        <a href="/Offers/Create" class="w3-bar-item w3-button w3-mobile">Sell your car</a>
+        <a href="/Dealers/DealersList" class="w3-bar-item w3-button w3-mobile">Dealers</a>
+        <a href="/Dealers/Add" class="w3-bar-item w3-button w3-mobile">Add dealer</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
+        <a href="/Identity/Account/Logout" class="w3-bar-item w3-button w3-right w3-mobile" style="background-color:#b2cce6">Logout</a>
+    </div>
         }
         else if (this.User.IsInRole("User"))
         {
@@ -48,7 +49,7 @@
                 <a href="/Home/Index" class="w3-bar-item w3-button w3-mobile" style="background-color:#b2cce6"><img src="~/img/navbar-img.png" class="w3-margin-right">Vehicle Trader</a>
                 <a href="/Offers/OffersList" class="w3-bar-item w3-button w3-mobile">New & Used Cars</a>
                 <a href="/Offers/Create" class="w3-bar-item w3-button w3-mobile">Sell your car</a>
-                <a href="#about" class="w3-bar-item w3-button w3-mobile">Dealers</a>
+                <a href="/Dealers/DealersList" class="w3-bar-item w3-button w3-mobile">Dealers</a>
                 <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
                 <a href="/Identity/Account/Logout" class="w3-bar-item w3-button w3-right w3-mobile" style="background-color:#b2cce6">Logout</a>
             </div>

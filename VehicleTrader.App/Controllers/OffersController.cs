@@ -60,5 +60,11 @@
                     };
                 }).ToList());
         }
+
+        [HttpGet]
+        public IActionResult FindOffers()
+        {
+            return this.View();
+        }
     }
 }

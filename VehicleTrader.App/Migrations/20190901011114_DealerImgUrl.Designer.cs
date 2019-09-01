@@ -10,8 +10,8 @@ using VehicleTrader.Data;
 namespace VehicleTrader.App.Migrations
 {
     [DbContext(typeof(VehicleTraderDbContext))]
-    [Migration("20190831224434_RegYearUpdate")]
-    partial class RegYearUpdate
+    [Migration("20190901011114_DealerImgUrl")]
+    partial class DealerImgUrl
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -131,6 +131,25 @@ namespace VehicleTrader.App.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("VehicleTrader.Models.Dealer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Cars");
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<string>("Location");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dealers");
+                });
+
             modelBuilder.Entity("VehicleTrader.Models.Engine", b =>
                 {
                     b.Property<int>("Id")
@@ -230,19 +249,6 @@ namespace VehicleTrader.App.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Offers");
-                });
-
-            modelBuilder.Entity("VehicleTrader.Models.RegistrationYear", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Year");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RegistrationYears");
                 });
 
             modelBuilder.Entity("VehicleTrader.Models.VehicleTraderUser", b =>

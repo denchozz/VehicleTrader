@@ -129,6 +129,25 @@ namespace VehicleTrader.App.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("VehicleTrader.Models.Dealer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Cars");
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<string>("Location");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dealers");
+                });
+
             modelBuilder.Entity("VehicleTrader.Models.Engine", b =>
                 {
                     b.Property<int>("Id")
@@ -228,19 +247,6 @@ namespace VehicleTrader.App.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Offers");
-                });
-
-            modelBuilder.Entity("VehicleTrader.Models.RegYear", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Year");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RegYears");
                 });
 
             modelBuilder.Entity("VehicleTrader.Models.VehicleTraderUser", b =>

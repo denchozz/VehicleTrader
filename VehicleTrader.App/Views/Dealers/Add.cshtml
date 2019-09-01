@@ -1,0 +1,42 @@
+﻿@model VehicleTrader.App.ViewModels.Dealers.AddDealerViewModel
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<img src="~/img/homepage-img.jpg" style="min-width:1000px" width="1600" height="900">
+<div class="w3-display-left w3-padding w3-col 16 m4" style="margin-left:175px">
+    <div class="w3-container" style="background-color:#b2cce6">
+        <h2><img src="~/img/navbar-img.png" /><i class="w3-margin-right"></i>Add dealer</h2>
+    </div>
+    <div class="w3-container w3-white w3-padding-16">
+        <form id="add" method="post">
+            <div class="w3-row-padding" style="margin:0 -16px;">
+                <div class="w3-half w3-margin-bottom">
+                    <label>Dealer Name</label>
+                    <br />
+                    <input type="text" class="w3-input w3-border" name="DealerName" form="add">
+                </div>
+                <div class="w3-half">
+                    <label>Cars</label>
+                    <br />
+                    <input type="text" class="w3-input w3-border" name="cars" form="add">
+                </div>
+            </div>
+            <div class="w3-row-padding" style="margin:0 -16px;">
+                <div class="w3-half w3-margin-bottom">
+                    <label>Location</label>
+                    <br />
+                    <input type="text" class="w3-input w3-border" name="location" form="add">
+                </div>
+                <div class="w3-half">
+                    <label>Image URL</label>
+                    <br />
+                    <input type="text" class="w3-input w3-border" name="ImgUrl" form="add">
+                </div>
+            </div>
+            <button class="w3-button" style="background-color:#b2cce6" type="submit">Add dealer</button>
+        </form>
+    </div>
+</div>

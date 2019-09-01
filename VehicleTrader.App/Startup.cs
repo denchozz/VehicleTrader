@@ -58,6 +58,7 @@
 
             //Register services!!!
             services.AddTransient<IOffersService, OffersService>();
+            services.AddTransient<IDealersService, DealersService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
