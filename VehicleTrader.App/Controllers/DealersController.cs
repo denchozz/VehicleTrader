@@ -1,5 +1,6 @@
 ﻿namespace VehicleTrader.App.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Linq;
     using VehicleTrader.App.ViewModels.Dealers;
@@ -17,12 +18,14 @@
             this.dealersService = dealersService;
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Add()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult Add(AddDealerViewModel viewModel)
         {
             var dealer = this.dealersService.Add(viewModel.DealerName, viewModel.Cars, viewModel.Location, viewModel.ImgUrl);
@@ -34,6 +37,7 @@
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult DealersList()
         {
             return View(context.Dealers

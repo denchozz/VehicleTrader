@@ -1,5 +1,6 @@
 ﻿namespace VehicleTrader.App.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Linq;
     using VehicleTrader.App.ViewModels.Offers;
@@ -17,6 +18,7 @@
             this.offersService = offersService;
         }
 
+        [Authorize]
         public IActionResult Create()
         {
             this.ViewData["Manufacturers"] = this.context.Manufacturers.ToList();
@@ -29,6 +31,7 @@
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Create(CreateOfferViewModel viewModel)
         {
             var offer = this.offersService.CreateOffer(viewModel.Make, viewModel.Model, viewModel.Year,
